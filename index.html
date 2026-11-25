@@ -35,19 +35,19 @@
     </section>
 
     <section id="projects" class="content-section" aria-labelledby="projects-title">
-      <div class="section-head"><div><p class="kicker">SELECTED PROJECTS</p><h2 id="projects-title">Things I’ve worked on</h2></div><span class="section-index">01 — 08</span></div>
-
-      <article class="project-feature">
-        <div class="feature-aside"><span class="project-index">01</span></div>
-        <div class="feature-content">
-          <div class="project-title-line"><h3>VisionVest</h3><span><a href="https://github.com/AaravSureban/VisionVest" target="_blank" rel="noopener" aria-label="Open VisionVest team repository">Repository ↗</a> <span aria-hidden="true">·</span> <a href="https://devpost.com/software/visionvest" target="_blank" rel="noopener" aria-label="Open VisionVest on Devpost">Devpost ↗</a></span></div>
-          <p class="project-summary">A wearable navigation system that turns nearby obstacles and phone commands into directional vibration cues.</p>
-          <p class="project-description">I worked on ESP32 firmware connecting Bluetooth commands, ultrasonic sensing, and haptic motor control. The sensor loop stays responsive while measurements are in progress.</p>
-          <div class="project-bottom"><div class="tags"><span>ESP32</span><span>C++</span><span>BLE</span><span>Ultrasonic sensing</span></div><details><summary>Firmware notes <span aria-hidden="true">+</span></summary><p>The sensor state machine advances over loop passes instead of waiting for an echo in a blocking loop. That leaves time for command handling and motor updates. Packet expiration prevents an old phone cue from remaining active indefinitely.</p></details></div>
-        </div>
-      </article>
+      <div class="section-head"><h2 id="projects-title">Projects</h2></div>
 
       <div class="project-list">
+        <article class="project-row">
+          <div class="project-row-meta"><span>01</span></div>
+          <div class="project-row-body">
+            <h3>VisionVest</h3>
+            <p>A wearable navigation system that turns nearby obstacles and phone commands into directional vibration cues. I worked on ESP32 firmware connecting Bluetooth commands, ultrasonic sensing, and haptic motor control. The sensor loop stays responsive while measurements are in progress.</p>
+            <div class="tags"><span>ESP32</span><span>C++</span><span>BLE</span><span>Ultrasonic sensing</span></div>
+            <div class="project-title-line"><span><a href="https://github.com/AaravSureban/VisionVest" target="_blank" rel="noopener" aria-label="Open VisionVest team repository">Repository ↗</a> <span aria-hidden="true">·</span> <a href="https://devpost.com/software/visionvest" target="_blank" rel="noopener" aria-label="Open VisionVest on Devpost">Devpost ↗</a></span></div>
+          </div>
+          <details><summary>Firmware notes <span aria-hidden="true">+</span></summary><p>The sensor state machine advances over loop passes instead of waiting for an echo in a blocking loop. That leaves time for command handling and motor updates. Packet expiration prevents an old phone cue from remaining active indefinitely.</p></details>
+        </article>
         <article class="project-row">
           <div class="project-row-meta"><span>02</span></div>
           <div class="project-row-body"><h3>Polaris GEM E2 Autonomous Driving</h3><p>A full-scale electric vehicle that follows lanes using live camera footage. The ROS 2 stack turns detected lane markings into ground-plane waypoints, estimates local motion from wheel speed and an IMU, and controls steering, throttle, and braking. The GEM completed a two-lap on-track evaluation, stopping for signs and waiting for pedestrians to clear before resuming.</p><div class="tags"><span>ROS 2</span><span>PyTorch</span><span>OpenCV</span><span>Pure Pursuit</span></div></div>
@@ -55,12 +55,12 @@
         </article>
         <article class="project-row">
           <div class="project-row-meta"><span>03</span></div>
-          <div class="project-row-body"><div class="project-title-line"><h3>Mopbot</h3><a href="https://github.com/Jbamidi/Mopbot" target="_blank" rel="noopener" aria-label="Open Mopbot on GitHub">GitHub ↗</a></div><p>I owned the STM32 firmware for our two-person autonomous mopping robot. I wrote the C code for sensor acquisition, encoder feedback, PI wheel-speed control, and pump control that permits water delivery only during eligible forward cleaning motion.</p><div class="tags"><span>STM32</span><span>C</span><span>I²C</span><span>PWM</span><span>UART</span></div></div>
+          <div class="project-row-body"><h3>Mopbot</h3><p>I owned the STM32 firmware for our two-person autonomous mopping robot. I wrote the C code for sensor acquisition, encoder feedback, PI wheel-speed control, and pump control that permits water delivery only during eligible forward cleaning motion.</p><div class="tags"><span>STM32</span><span>C</span><span>I²C</span><span>PWM</span><span>UART</span></div><div class="project-title-line"><a href="https://github.com/Jbamidi/Mopbot" target="_blank" rel="noopener" aria-label="Open Mopbot on GitHub">GitHub ↗</a></div></div>
           <details><summary>Firmware notes <span aria-hidden="true">+</span></summary><p>I implemented interrupt-driven UART diagnostics, sensor freshness checks, latched faults, and watchdog recovery. During bring-up of the standalone bumper-operated refill utility, I traced the signal from the bumper through driver enable and PWM to the pump, corrected the driver wake sequence, and verified physical actuation.</p></details>
         </article>
         <article class="project-row">
           <div class="project-row-meta"><span>04</span></div>
-          <div class="project-row-body"><div class="project-title-line"><h3>Rollie Autonomous Walker</h3><a href="https://devpost.com/software/rollie-kfe7d0" target="_blank" rel="noopener" aria-label="Open Rollie on Devpost">Devpost ↗</a></div><p>A motorized walker that combines semantic segmentation, stereo depth, and LiDAR to navigate pedestrian routes, follow a selected person, and drive to a nearby point. Its iPhone app offers spoken commands, VoiceOver, route previews, and explicit motion confirmation. The integrated walker was tested on physical hardware.</p><div class="tags"><span>Jetson</span><span>ROS 2</span><span>OAK-D</span><span>ESP32</span><span>SwiftUI</span></div></div>
+          <div class="project-row-body"><h3>Rollie Autonomous Walker</h3><p>A motorized walker that combines semantic segmentation, stereo depth, and LiDAR to navigate pedestrian routes, follow a selected person, and drive to a nearby point. Its iPhone app offers spoken commands, VoiceOver, route previews, and explicit motion confirmation. The integrated walker was tested on physical hardware.</p><div class="tags"><span>Jetson</span><span>ROS 2</span><span>OAK-D</span><span>ESP32</span><span>SwiftUI</span></div><div class="project-title-line"><a href="https://devpost.com/software/rollie-kfe7d0" target="_blank" rel="noopener" aria-label="Open Rollie on Devpost">Devpost ↗</a></div></div>
           <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>The Jetson combines camera and LiDAR data into a local hazard map and routes motion requests through a single serial bridge. The ESP32 controls motor PWM and disables output if valid commands stop arriving. The app also supports manual driving and downloads timestamped sensor recordings.</p></details>
         </article>
         <article class="project-row">
@@ -83,14 +83,18 @@
           <div class="project-row-body"><h3>Guitar Auto-Tuner</h3><p>Designed frequency-selective circuits and motor-control hardware to automatically adjust a guitar’s tuning pegs.</p><div class="tags"><span>LTspice</span><span>Analog circuits</span><span>H-bridge</span></div></div>
           <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>Band-pass filters and peak detection isolate tones; comparator circuits and an H-bridge drive the tuning motor. Breadboard prototypes were checked with audio input and oscilloscope measurements.</p></details>
         </article>
+        <article class="project-row">
+          <div class="project-row-meta"><span>09</span></div>
+          <div class="project-row-body"><h3>Binaural Audio Project</h3><p>Built a real-time Python binaural renderer that keeps virtual sound sources fixed as the listener moves their head. The renderer uses a 9-axis IMU, CIPIC head-related impulse responses, and SciPy FFT-based convolution.</p><div class="tags"><span>Python</span><span>SciPy</span><span>IMU</span><span>DSP</span></div></div>
+          <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>Barycentric interpolation and smoothed filter updates reduce audible switching artifacts. STFT-based head-motion prediction estimates head pose 100 ms ahead so the renderer can update the filters proactively.</p></details>
+        </article>
       </div>
     </section>
 
     <section id="experience" class="content-section experience" aria-labelledby="experience-title">
-      <div class="section-head"><div><p class="kicker">EXPERIENCE</p><h2 id="experience-title">Work and research</h2></div></div>
+      <div class="section-head"><h2 id="experience-title">Experience</h2></div>
       <article class="experience-entry"><div class="experience-label"><h3>Molex</h3><span>Firmware Engineering Intern</span><small>Fremont, CA</small></div><div class="experience-detail"><p>Worked on embedded firmware portability across development tools, analog front ends, and microcontrollers.</p><ul><li>Automated migration from Keil µVision to SEGGER Embedded Studio.</li><li>Implemented 1PPS delay processing and EEPROM calibration storage.</li><li>Added runtime support for two analog front ends with device-specific drivers.</li><li>Separated shared application logic from MCU-specific FreeRTOS, I²C, and SPI routines.</li></ul></div></article>
       <article class="experience-entry"><div class="experience-label"><h3>Cisco</h3><span>ASIC Engineering Intern</span><small>San Jose, CA</small></div><div class="experience-detail"><p>Built automation for gate-level timing analysis and waveform debugging.</p><ul><li>Used Python and SystemVerilog to measure signal delays and apply skew corrections.</li><li>Developed FSDB waveform comparison tooling and searchable HTML reports.</li></ul></div></article>
-      <article class="experience-entry"><div class="experience-label"><h3>Spatial Audio Research</h3><span>Undergraduate Researcher · UIUC</span><small>Champaign, IL</small></div><div class="experience-detail"><p>Kept virtual sound sources fixed during head movement with a 9-axis IMU and a real-time Python binaural renderer using CIPIC HRIRs and SciPy FFT-based convolution.</p><ul><li>Reduced filter-switching artifacts with barycentric HRIR interpolation and smoothed updates.</li><li>Used STFT-based prediction of head motion 100 ms ahead to update HRIR filters proactively.</li></ul></div></article>
     </section>
 
     <section id="about" class="content-section about" aria-labelledby="about-title">
