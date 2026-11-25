@@ -35,7 +35,7 @@
     </section>
 
     <section id="projects" class="content-section" aria-labelledby="projects-title">
-      <div class="section-head"><div><p class="kicker">SELECTED PROJECTS</p><h2 id="projects-title">Things I’ve worked on</h2></div><span class="section-index">01 — 05</span></div>
+      <div class="section-head"><div><p class="kicker">SELECTED PROJECTS</p><h2 id="projects-title">Things I’ve worked on</h2></div><span class="section-index">01 — 08</span></div>
 
       <article class="project-feature">
         <div class="feature-aside"><span class="project-index">01</span><span class="project-kind">EMBEDDED · TEAM PROJECT</span><div class="feature-stamp" aria-hidden="true">VV</div></div>
@@ -49,22 +49,37 @@
 
       <div class="project-list">
         <article class="project-row">
-          <div class="project-row-meta"><span>02</span><span>ROBOTICS</span></div>
+          <div class="project-row-meta"><span>02</span><span>AUTONOMOUS VEHICLES</span></div>
+          <div class="project-row-body"><h3>Polaris GEM E2 Autonomous Driving</h3><p>Our four-person UIUC ECE 484 team built a camera-based driving stack for a full-scale electric vehicle. I fine-tuned the lane segmentation model on GEM camera footage and helped turn its predictions into live waypoints. The car completed a two-lap on-track evaluation with stops for signs and pedestrians.</p><div class="tags"><span>ROS 2</span><span>PyTorch</span><span>OpenCV</span><span>Pure Pursuit</span></div></div>
+          <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>The planner projected lane markings from image pixels onto the ground using camera calibration, then published lane-center waypoints. Pure Pursuit tracked those waypoints using wheel-speed and IMU odometry, while a safety supervisor could inhibit propulsion and request braking.</p></details>
+        </article>
+        <article class="project-row">
+          <div class="project-row-meta"><span>03</span><span>EMBEDDED FIRMWARE</span></div>
+          <div class="project-row-body"><h3>Mopbot</h3><p>I owned the STM32 firmware for our two-person autonomous mopping robot. I wrote the C code for sensor acquisition, encoder feedback, PI wheel-speed control, and pump control that permits water delivery only during eligible forward cleaning motion.</p><div class="tags"><span>STM32</span><span>C</span><span>I²C</span><span>PWM</span><span>UART</span></div></div>
+          <details><summary>Firmware notes <span aria-hidden="true">+</span></summary><p>I implemented interrupt-driven UART diagnostics, sensor freshness checks, latched faults, and watchdog recovery. During bring-up of the standalone bumper-operated refill utility, I traced the signal from the bumper through driver enable and PWM to the pump, corrected the driver wake sequence, and verified physical actuation.</p></details>
+        </article>
+        <article class="project-row">
+          <div class="project-row-meta"><span>04</span><span>ASSISTIVE ROBOTICS</span></div>
+          <div class="project-row-body"><h3>Rollie Autonomous Walker</h3><p>A motorized walker that combines semantic segmentation, stereo depth, and LiDAR to navigate pedestrian routes, follow a selected person, and drive to a nearby point. Its iPhone app offers spoken commands, VoiceOver, route previews, and explicit motion confirmation. The integrated walker was tested on physical hardware.</p><div class="tags"><span>Jetson</span><span>ROS 2</span><span>OAK-D</span><span>ESP32</span><span>SwiftUI</span></div></div>
+          <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>The Jetson combines camera and LiDAR data into a local hazard map and routes motion requests through a single serial bridge. The ESP32 controls motor PWM and disables output if valid commands stop arriving. The app also supports manual driving and downloads timestamped sensor recordings.</p></details>
+        </article>
+        <article class="project-row">
+          <div class="project-row-meta"><span>05</span><span>ROBOTICS</span></div>
           <div class="project-row-body"><h3>Vision-Guided UR3 Drawing Robot</h3><p>Built an image-to-drawing pipeline that extracts contours with OpenCV, maps image points to the work surface, and has a UR3 trace the paths using ROS and inverse kinematics.</p><div class="tags"><span>Python</span><span>OpenCV</span><span>ROS</span><span>UR3</span></div></div>
           <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>MoveJ repositions the arm between contours; MoveL moves the pen tip along the drawing path. Edge detection and contour simplification turn an image into robot waypoints.</p></details>
         </article>
         <article class="project-row">
-          <div class="project-row-meta"><span>03</span><span>SYSTEMS</span></div>
+          <div class="project-row-meta"><span>06</span><span>SYSTEMS</span></div>
           <div class="project-row-body"><h3>RISC-V Operating System</h3><p>Developed a C kernel with user-mode execution, process management, virtual memory, storage, and a shell for running programs from disk.</p><div class="tags"><span>C</span><span>RISC-V</span><span>Sv39</span><span>VirtIO</span></div></div>
           <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>Implemented three-level page tables, lazy allocation, address-space cloning, ELF loading, traps, and system calls. VirtIO-backed storage supports filesystem operations and block caching.</p></details>
         </article>
         <article class="project-row">
-          <div class="project-row-meta"><span>04</span><span>GPU COMPUTING</span></div>
+          <div class="project-row-meta"><span>07</span><span>GPU COMPUTING</span></div>
           <div class="project-row-body"><h3>GPT-2 Inference Optimization</h3><p>Optimized CUDA kernels for attention, normalization, activation functions, and matrix multiplication, achieving a 9.7× inference speedup.</p><div class="tags"><span>CUDA</span><span>Nsight Systems</span><span>Nsight Compute</span></div></div>
           <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>Used profiling to examine kernel timing, memory traffic, cache behavior, and occupancy, then focused optimization work on measured bottlenecks.</p></details>
         </article>
         <article class="project-row">
-          <div class="project-row-meta"><span>05</span><span>ANALOG · CONTROL</span></div>
+          <div class="project-row-meta"><span>08</span><span>ANALOG · CONTROL</span></div>
           <div class="project-row-body"><h3>Guitar Auto-Tuner</h3><p>Designed frequency-selective circuits and motor-control hardware to automatically adjust a guitar’s tuning pegs.</p><div class="tags"><span>LTspice</span><span>Analog circuits</span><span>H-bridge</span></div></div>
           <details><summary>Project notes <span aria-hidden="true">+</span></summary><p>Band-pass filters and peak detection isolate tones; comparator circuits and an H-bridge drive the tuning motor. Breadboard prototypes were checked with audio input and oscilloscope measurements.</p></details>
         </article>
